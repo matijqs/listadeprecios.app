@@ -1,0 +1,23 @@
+body {
+    background-color: #f8f9fa; /* Color de fondo suave */
+}
+
+h1 {
+    color: #ff0000; /* Color del título */
+}
+
+.table {
+    background-color: white;
+}
+
+ /* Estilo para el logo */
+ .logo {
+    max-width: 200px; /* Ajusta el tamaño máximo del logo */
+    height: auto;
+}
+
+/* Estilo para el contenedor del logo */
+.logo-container {
+    text-align: center; /* Centra el logo horizontalmente */
+    margin-bottom: 20px; /* Espacio debajo del logo */
+}
