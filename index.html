@@ -33,9 +33,8 @@
                         <th>Medida</th>
                         <th>Marca</th>
                         <th>Modelo</th>
-                        <th>Instalado</th>
-                        <th>Sin Instalar</th>
-                        <th>Disponibilidad</th>
+                        <th>Unidad</th>
+                        <th>x 4</th>
                     </tr>
                 <tbody id="tabla-precios">
                 </tbody>
@@ -61,34 +60,33 @@
 
         // Función para mostrar los precios en la tabla
         function mostrarPrecios(data) {
-    const tablaPrecios = document.getElementById('tabla-precios');
-    tablaPrecios.innerHTML = ''; // Limpiar la tabla antes de agregar filas
+            const tablaPrecios = document.getElementById('tabla-precios');
+            tablaPrecios.innerHTML = ''; // Limpiar la tabla antes de agregar filas
 
-    // Iterar sobre cada entrada del JSON y agregarla a la tabla
-    data.forEach(precio => {
-        const fila = document.createElement('tr');
-        fila.innerHTML = `
-            <td>${precio.MEDIDA}</td>
-            <td>${precio.MARCA}</td>
-            <td>${precio.MODELO}</td>
-            <td>${precio['INST.']}</td>
-            <td>${precio['S/INSTA']}</td>
-            <td>${precio.DISP}</td>
-        `;
-        tablaPrecios.appendChild(fila);
-    });
-}
+            // Iterar sobre cada entrada del JSON y agregarla a la tabla
+            data.forEach(precio => {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${precio.MEDIDA}</td>
+                    <td>${precio.MARCA}</td>
+                    <td>${precio.MODELO}</td>
+                    <td>${precio.UNIDAD}</td>
+                    <td>${precio['X 4']}</td>
+                `;
+                tablaPrecios.appendChild(fila);
+            });
+        }
 
         // Filtrar resultados según la búsqueda
         document.getElementById('buscador').addEventListener('input', function() {
-    const textoBusqueda = this.value.toLowerCase();
+            const textoBusqueda = this.value.toLowerCase();
 
-    // Filtrar los datos basados en la búsqueda por medida, marca o modelo
-    const resultadosFiltrados = preciosData.filter(precio => {
-        return precio.MEDIDA.toLowerCase().includes(textoBusqueda) ||
-               precio.MARCA.toLowerCase().includes(textoBusqueda) ||
-               precio.MODELO.toLowerCase().includes(textoBusqueda);
-    });
+            // Filtrar los datos basados en la búsqueda por medida, marca o modelo
+            const resultadosFiltrados = preciosData.filter(precio => {
+                return precio.MEDIDA.toLowerCase().includes(textoBusqueda) ||
+                       precio.MARCA.toLowerCase().includes(textoBusqueda) ||
+                       precio.MODELO.toLowerCase().includes(textoBusqueda);
+            });
 
             // Actualizar la tabla con los resultados filtrados
             mostrarPrecios(resultadosFiltrados);
