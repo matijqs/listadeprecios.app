@@ -1,39 +1,25 @@
-.form-control {
-    box-sizing: border-box;
-    font-size: 1rem;
-    padding: 0.75rem 1.25rem;
-    margin: 0;
-}
-
-.row.mb-3 {
-    margin-bottom: 1rem;
-}
-
-.container {
-    padding: 0;
-}
 body {
-    background-color: #f8f9fa; /* Color de fondo suave */
-    overflow-x: hidden;
+    background-color: #242424;
 }
 
-h1 {
-    color: #ff0000; /* Color del título */
+.card {
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #8a8a8a;
 }
 
-.table {
-    background-color: white;
+.btn-primary {
+    background-color: #ff0000;
+    border: none;
 }
 
- /* Estilo para el logo */
- .logo {
-    max-width: 200px; /* Ajusta el tamaño máximo del logo */
-    height: auto;
+.btn-primary:hover {
+    background-color: #343536;
 }
 
-/* Estilo para el contenedor del logo */
-.logo-container {
-    text-align: center; /* Centra el logo horizontalmente */
-    margin-bottom: 20px; /* Espacio debajo del logo */
-    margin-bottom: 1rem;
+#resultado {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
 }
